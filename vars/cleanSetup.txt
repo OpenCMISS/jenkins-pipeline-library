@@ -1,0 +1,7 @@
+
+===========
+Clean setup
+===========
+
+Clean function to clean all generated files from a build that uses the setup CMake installation script.  This removes the setup build directory, and the build and install directory trees in the opencmiss directory.
+
