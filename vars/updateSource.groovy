@@ -10,6 +10,8 @@ def call() {
     echo 'hi'
     println nodeName
     echo 'hi'
+    println "node_name=${env.NODE_NAME}"
+
     if (nodeName.startsWith('Ubuntu')) {
         println 'yes matching machine!'
     } else {
