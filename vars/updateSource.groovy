@@ -1,9 +1,10 @@
 #!/usr/bin/groovy
 
 def call() {
-    echo 'hi ${env.NODE_NAME}'
-    String nodeName = ${env.NODE_NAME};
-    echo 'hi ${env.NODE_NAME}'
+    println 'hi ${env.NODE_NAME}'
+    String nodeName = '${env.NODE_NAME}';
+    println 'hi ${env.NODE_NAME}'
+    println nodeName
 
     if (nodeName.startsWith('Ubuntu')) {
         println 'yes matching machine!'
