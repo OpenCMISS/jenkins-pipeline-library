@@ -4,7 +4,9 @@ import jenkins.model.Jenkins
 
 def call() {
     echo 'hi'
-    def nodeName = System.getenv("NODE_NAME")
+    def nodeName = System.getenv('NODE_NAME')
+    echo 'hi'
+    echo nodeName
     echo 'hi'
     println nodeName
     echo 'hi'
