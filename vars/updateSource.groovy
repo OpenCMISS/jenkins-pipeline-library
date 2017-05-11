@@ -1,10 +1,13 @@
 #!/usr/bin/groovy
 
 def call() {
+    echo 'hi'
+    echo '${NODE_NAME}'
+
     if (${NODE_NAME}.startsWith('Ubuntu')) {
-        echo 'yes matching machine!'
+        println 'yes matching machine!'
     } else {
-        echo 'bummer not matched'
+        println 'bummer not matched'
     }
     dir ('./opencmiss/build/manage/release') {
         sh 'make update_all'
