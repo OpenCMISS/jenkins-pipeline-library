@@ -4,10 +4,7 @@ import jenkins.model.Jenkins
 
 def call() {
     echo 'hi'
-    echo '${NODE_NAME}'
-    def envVars = Jenkins.instance.getGlobalNodeProperties()[0].getEnvVars()
-    echo 'hi'
-    def nodeName = envVars['NODE_NAME']
+    def nodeName = System.getenv("NODE_NAME")
     echo 'hi'
     println nodeName
     echo 'hi'
