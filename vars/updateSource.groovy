@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
 
 def call() {
-    def nodeName = ${env.NODE_NAME}
+    String nodeName = ${env.NODE_NAME}
     echo 'hi'
 
     if (nodeName.startsWith('Ubuntu')) {
