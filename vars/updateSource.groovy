@@ -1,16 +1,8 @@
 #!/usr/bin/groovy
 
-import jenkins.model.Jenkins
-
 def call() {
-    echo 'hi'
-    def nodeName = System.getenv('NODE_NAME')
-    echo 'hi'
-    echo nodeName
-    echo 'hi'
-    println nodeName
-    echo 'hi'
-    println "node_name=${env.NODE_NAME}"
+    def nodeName = ${env.NODE_NAME}
+    echo 'nodeName=${nodeName}'
 
     if (nodeName.startsWith('Ubuntu')) {
         println 'yes matching machine!'
