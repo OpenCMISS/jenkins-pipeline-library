@@ -5,8 +5,9 @@ import jenkins.model.Jenkins
 def call() {
     echo 'hi'
     echo '${NODE_NAME}'
-def envVars = Jenkins.instance.getGlobalNodeProperties()[0].getEnvVars()
-echo envVars['NODE_NAME']
+    echo ${NODE_NAME}
+    def envVars = Jenkins.instance.getGlobalNodeProperties()[0].getEnvVars()
+    echo envVars['NODE_NAME']
     if (${NODE_NAME}.startsWith('Ubuntu')) {
         println 'yes matching machine!'
     } else {
