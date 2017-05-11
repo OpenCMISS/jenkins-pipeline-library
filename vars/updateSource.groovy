@@ -1,18 +1,16 @@
 #!/usr/bin/groovy
 
 def call() {
-    println "hi ${env.NODE_NAME}"
     String nodeName = "${env.NODE_NAME}";
-    println "hi ${env.NODE_NAME}"
-    println nodeName
 
-    if (nodeName.startsWith("Ubuntu")) {
-        println 'yes matching machine!'
+    if (nodeName.startsWith("Windows")) {
+        dir('./opencmiss/build/manage/') {
+            bat '"C:\\Program Files\\CMake\\bin\\cmake.exe" --build . --target update_all --config Release'
+        }
     } else {
-        println 'bummer not matched'
-    }
-    dir ('./opencmiss/build/manage/release') {
-        sh 'make update_all'
+        dir ('./opencmiss/build/manage/release') {
+            sh 'make update_all'
+        }
     }
 }
 
