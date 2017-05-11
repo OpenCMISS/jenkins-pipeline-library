@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
 
 def call() {
-    if (${NODE_NAME}.startsWith('Ubuntu') {
+    if (${NODE_NAME}.startsWith('Ubuntu')) {
         echo 'yes matching machine!'
     } else {
         echo 'bummer not matched'
