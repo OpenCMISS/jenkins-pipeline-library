@@ -5,7 +5,7 @@ def call() {
     String jobName = "${env.JOB_NAME}";
     
     String rootName = "opencmiss";
-    if (jobName.contains("Dependencies") {
+    if (jobName.contains("Dependencies")) {
         rootName = "opencmiss_dependencies"; 
     }
 
