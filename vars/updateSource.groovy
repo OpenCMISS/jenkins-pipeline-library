@@ -13,9 +13,21 @@ def call() {
         dir("./${rootName}/build/manage/") {
             bat '"C:\\Program Files\\CMake\\bin\\cmake.exe" --build . --target update_all --config Release'
         }
+        dir("./${rootName}/src/cmake_modules/") {
+            bat 'git pull'
+        }
+        dir("./${rootName}/src/manage/") {
+            bat 'git pull'
+        }
     } else {
         dir ("./${rootName}/build/manage/release") {
             sh 'make update_all'
+        }
+        dir("./${rootName}/src/cmake_modules/") {
+            sh 'git pull'
+        }
+        dir("./${rootName}/src/manage/") {
+            sh 'git pull'
         }
     }
 }
