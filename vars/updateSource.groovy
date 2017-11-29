@@ -21,13 +21,25 @@ def call() {
         }
     } else {
         dir ("./${rootName}/build/manage/release") {
-            sh 'make update_all'
+            if (fileExists('CMakeCache.txt') {
+                sh 'make update_all'
+            } else {
+                echo 'No CMakeCache.txt file.'
+            }
         }
         dir("./${rootName}/src/cmake_modules/") {
-            sh 'git pull'
+            if (fileExists('CMakeLists.txt') {
+                sh 'git pull'
+            } else {
+                echo 'No CMakeLists.txt file.'
+            }
         }
         dir("./${rootName}/src/manage/") {
-            sh 'git pull'
+            if (fileExists('CMakeLists.txt') {
+                sh 'git pull'
+            } else {
+                echo 'No CMakeLists.txt file.'
+            }
         }
     }
 }
