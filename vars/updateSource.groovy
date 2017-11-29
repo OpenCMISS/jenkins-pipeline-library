@@ -23,7 +23,7 @@ def call() {
         dir ("./${rootName}/build/manage/release") {
             try {
                 sh 'make update_all'
-            } catch () {
+            } catch (Exception ex) {
                 echo 'Error trying to update_all.'
             }
         }
