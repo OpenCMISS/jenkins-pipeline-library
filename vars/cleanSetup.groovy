@@ -1,20 +1,16 @@
 #!/usr/bin/groovy
 
-def call() {
-    String jobName = "${env.JOB_NAME}";
-    
-    String rootName = "opencmiss";
-    if (jobName.contains("Dependencies")) {
-        rootName = "opencmiss_dependencies"; 
-    }
-
+def call(String directory) {
     dir ('./setup-build') {
+        echo 'delete setup-build'
         deleteDir()
     }
-    dir ('./${rootName}/build') {
+    dir ('./${directory}/build') {
+        echo 'delete ${directory}/build'
         deleteDir()
     }
-    dir ('./${rootName}/install') {
+    dir ('./${directory}/install') {
+        echo 'delete ${directory}/install'
         deleteDir()
     }
 }
