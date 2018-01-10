@@ -3,7 +3,7 @@
 Clean setup
 ===========
 
- arg: directory containing 'build' and 'install' directories.
+ arg: rootName - Root directory containing 'build' and 'install' directories which are to be removed.
 
 Clean function to clean all generated files from a build that uses the setup CMake installation script.  This removes the setup build directory, and the build and install directory trees in the directory passed as an argument.
 
