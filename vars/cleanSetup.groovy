@@ -6,11 +6,11 @@ def call(String rootName) {
         echo 'delete setup-build'
         deleteDir()
     }
-    dir ('./${rootName}/build') {
+    dir ("./${rootName}/build") {
         echo "delete ${workspace}/${rootName}/build"
         deleteDir()
     }
-    dir ('./${rootName}/install') {
+    dir ("./${rootName}/install") {
         echo "delete ${workspace}/${rootName}/install"
         deleteDir()
     }
