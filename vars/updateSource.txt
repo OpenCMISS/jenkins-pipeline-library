@@ -3,5 +3,7 @@
 Update source
 =============
 
-Update all source files in a setup installation setting.
+arg: rootName - Root directory under which to update the source files.
+
+Update all source files in a setup installation setting.  Updates using the build manage 'update_all' target before updating the manage source files and the cmake modules source files.
 
