@@ -1,15 +1,15 @@
 #!/usr/bin/groovy
 
-def call(String directory) {
+def call(String rootName) {
     dir ('./setup-build') {
         echo 'delete setup-build'
         deleteDir()
     }
-    dir ('./${directory}/build') {
+    dir ('./${rootName}/build') {
         echo 'delete ${directory}/build'
         deleteDir()
     }
-    dir ('./${directory}/install') {
+    dir ('./${rootName}/install') {
         echo 'delete ${directory}/install'
         deleteDir()
     }
