@@ -1,14 +1,9 @@
 #!/usr/bin/groovy
 
-def call() {
+def call(String rootName) {
     String nodeName = "${env.NODE_NAME}";
     String jobName = "${env.JOB_NAME}";
     
-    String rootName = "opencmiss";
-    if (jobName.contains("Dependencies")) {
-        rootName = "opencmiss_dependencies"; 
-    }
-
     if (nodeName.startsWith("Windows")) {
         dir("./${rootName}/build/manage/") {
             try {
